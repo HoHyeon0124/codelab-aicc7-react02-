@@ -1,0 +1,27 @@
+{
+  "name": "_0826-codelab-react02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HoHyeon0124/codelab-aicc7-react02-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HoHyeon0124/codelab-aicc7-react02-/issues"
+  },
+  "homepage": "https://github.com/HoHyeon0124/codelab-aicc7-react02-#readme",
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.3"
+  }
+}
