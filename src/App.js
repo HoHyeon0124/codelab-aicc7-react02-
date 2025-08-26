@@ -1,11 +1,16 @@
-import React from "react"
+import React from "react";
+import "font-awesome/css/font-awesome.min.css";
+import "/css/fonts.css";
+import "/css/base.css";
+import "/css/shop.css";
+import Containers from "./components/Containers";
 
 function App() {
   return (
-    <div>
-      <h1>Hello React</h1>
-    </div>
-  )
+      <>
+      <Containers />
+      </>
+  );
 }
 
 export default App
