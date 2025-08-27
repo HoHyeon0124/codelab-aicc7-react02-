@@ -47,13 +47,14 @@ module.exports = {
       template: "./index.html",
     }),
     new ESLintPlugin({
+      filename
       context: path.resolve(__dirname, "src"),
       extensions: [".js", "jsx"],
       exclude: ["node_modules"],
       fix: true,
       emitError: true,
       emitWarning: true,
-    })
+    }),
   ],
   devServer: {
     static: [
