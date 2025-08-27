@@ -1,9 +1,9 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
-const ESLintPlugin = require("eslint-webpack-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin")
 
-const path = require("path");
-const { emitWarning } = require("process");
+const path = require("path")
+const { emitWarning } = require("process")
 
 module.exports = {
   mode: "development",
@@ -47,7 +47,6 @@ module.exports = {
       template: "./index.html",
     }),
     new ESLintPlugin({
-      filename
       context: path.resolve(__dirname, "src"),
       extensions: [".js", "jsx"],
       exclude: ["node_modules"],
@@ -72,4 +71,4 @@ module.exports = {
     hot: true,
     open: true,
   },
-};
+}
