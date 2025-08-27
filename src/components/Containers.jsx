@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-import FormWrapper from "./FromWrapper";
+import FormWrapper from "./FormWrapper";
 import PrdWrap from "./PrdWrap";
 
 const Containers = (props) => {

@@ -1,9 +1,13 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+const ESLintPlugin = require("eslint-webpack-plugin");
+
 const path = require("path");
+const { emitWarning } = require("process");
 
 module.exports = {
   mode: "development",
-  entry: "./src/main.js",
+  entry: "./src/main.jsx",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.[contenthash].js",
@@ -42,6 +46,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./index.html",
     }),
+    new ESLintPlugin({
+      context: path.resolve(__dirname, "src"),
+      extensions: [".js", "jsx"],
+      exclude: ["node_modules"],
+      fix: true,
+      emitError: true,
+      emitWarning: true,
+    })
   ],
   devServer: {
     static: [
