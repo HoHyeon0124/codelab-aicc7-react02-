@@ -1,9 +1,8 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 const ESLintPlugin = require("eslint-webpack-plugin")
-
 const path = require("path")
-const { emitWarning } = require("process")
 
 module.exports = {
   mode: "development",
@@ -46,13 +45,23 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./index.html",
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "public"),
+          to: path.resolve(__dirname, "dist"),
+        },
+      ],
+    }),
     new ESLintPlugin({
+      configType: "flat",
       context: path.resolve(__dirname, "src"),
-      extensions: [".js", "jsx"],
-      exclude: ["node_modules"],
-      fix: true,
+      extensions: [".js", ".jsx"],
+      exclude: ["node_modules", "dist"],
+      overrideConfigFile: "./eslint.config.cjs",
       emitError: true,
       emitWarning: true,
+      failOnError: true,
     }),
   ],
   devServer: {
@@ -67,8 +76,16 @@ module.exports = {
       },
     ],
     compress: true,
-    port: 3000,
+    port: 3100,
     hot: true,
     open: true,
+  },
+  performance: {
+    hints: "warning",
+    maxAssetSize: 200000,
+    maxEntrypointSize: 400000,
+    assetFilter: function (assetFilename) {
+      return assetFilename.endsWith(".js")
+    },
   },
 }

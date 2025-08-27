@@ -30,12 +30,11 @@ module.exports = [
       prettier: prettierPlugin,
     },
     rules: {
-      "prettier/prettier": "warn",
+      "prettier/prettier": "error",
       "react/prop-types": "off",
       "no-unused-vars": "warn",
       "react/jsx-uses-react": "off",
       "react/react-in-jsx-scope": "off",
-      // react-hooks recommended rules 직접 추가
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
     },
