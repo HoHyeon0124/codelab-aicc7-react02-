@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Button from "@mui/material/Button"
 
 const FormWrapper = ({ onGetPrd, onResetPrd, onChangeSearch }) => {
   const [search, setSearch] = useState("")
@@ -28,6 +29,7 @@ const FormWrapper = ({ onGetPrd, onResetPrd, onChangeSearch }) => {
       >
         상품가져오기
       </button>
+      <Button variant="contained">상품가져오기</Button>
       <button
         className="btn"
         onClick={(e) => {
