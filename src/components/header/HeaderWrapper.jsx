@@ -1,24 +1,27 @@
-import Typography from "@mui/material/Typography"
-import Breadcrumbs from "@mui/material/Breadcrumbs"
-import Link from "@mui/material/Link"
+import { Typography, Breadcrumbs, Box } from "@mui/material"
+import { Link } from "react-router-dom"
 
-function handleClick(event) {
-  event.preventDefault()
-  console.info("You clicked a breadcrumb.")
-}
-
-export default function BasicBreadcrumbs() {
+export default function HeaderWrapper() {
   return (
-    <div role="presentation" onClick={handleClick}>
-      <Breadcrumbs aria-label="breadcrumb">
-        <Link underline="hover" color="inherit" href="/">
-          MUI
-        </Link>
-        <Link underline="hover" color="inherit" href="/material-ui/getting-started/installation/">
-          Core
-        </Link>
-        <Typography sx={{ color: "text.primary" }}>Breadcrumbs</Typography>
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+      }}
+    >
+      <Typography variant="h4">sdnsp0124</Typography>
+      <Breadcrumbs>
+        <Typography component={Link} to="shop">
+          CHAT
+        </Typography>
+        <Typography component={Link} to="board">
+          BOARD
+        </Typography>
+        <Typography component={Link} to="chat">
+          CHAT
+        </Typography>
       </Breadcrumbs>
-    </div>
+    </Box>
   )
 }

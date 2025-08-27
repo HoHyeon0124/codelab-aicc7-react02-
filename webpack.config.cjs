@@ -8,6 +8,7 @@ module.exports = {
   mode: "development",
   entry: "./src/main.jsx",
   output: {
+    // eslint-disable-next-line no-undef
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.[contenthash].js",
     publicPath: "/",
@@ -48,13 +49,16 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
+          // eslint-disable-next-line no-undef
           from: path.resolve(__dirname, "public"),
+          // eslint-disable-next-line no-undef
           to: path.resolve(__dirname, "dist"),
         },
       ],
     }),
     new ESLintPlugin({
       configType: "flat",
+      // eslint-disable-next-line no-undef
       context: path.resolve(__dirname, "src"),
       extensions: [".js", ".jsx"],
       exclude: ["node_modules", "dist"],
@@ -67,10 +71,12 @@ module.exports = {
   devServer: {
     static: [
       {
+        // eslint-disable-next-line no-undef
         directory: path.join(__dirname, "dist"),
         publicPath: "/",
       },
       {
+        // eslint-disable-next-line no-undef
         directory: path.join(__dirname, "public"),
         publicPath: "/",
       },
