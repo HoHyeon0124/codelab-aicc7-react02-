@@ -61,7 +61,7 @@ module.exports = {
       // eslint-disable-next-line no-undef
       context: path.resolve(__dirname, "src"),
       extensions: [".js", ".jsx"],
-      exclude: ["node_modules", "dist"],
+      exclude: ["node_modules", "dist", "webpack.config.cjs"],
       overrideConfigFile: "./eslint.config.cjs",
       emitError: true,
       emitWarning: true,
@@ -81,6 +81,7 @@ module.exports = {
         publicPath: "/",
       },
     ],
+    historyApiFallback: true,
     compress: true,
     port: 3100,
     hot: true,
